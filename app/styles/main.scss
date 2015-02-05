@@ -54,6 +54,67 @@ table {
     padding: 0.2em 0;
 }
 
+/////////////////////////////////////// Variables
+// primary color
+$bluegreen: #7ECBB1;
+$blue: #515E72;
+$yellow: #E3AA3F;
+$orange: #E4782B;
+$redorange: #DA5F27;
+$sand: #E8DCAA;
+$white: #fff;
+
+
+/////////////////////////////////////// Mixins
+@mixin animation-name($name) {
+    -webkit-animation-name: $name;
+    -moz-animation-name: $name;
+    -o-animation-name: $name;
+    animation-name: $name;
+}
+
+@mixin animation-delay($delay) {
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
+}
+
+@mixin animation-duration($duration) {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+}
+
+@mixin animation-timing-function($timing-function) {
+    -webkit-animation-timing-function: $timing-function;
+    -moz-animation-timing-function: $timing-function;
+    -o-animation-timing-function: $timing-function;
+    animation-timing-function: $timing-function;
+}
+
+@mixin animation-iteration-count($iteration-count) {
+    -webkit-animation-iteration-count: $iteration-count;
+    -moz-animation-iteration-count: $iteration-count;
+    -o-animation-iteration-count: $iteration-count;
+    animation-iteration-count: $iteration-count;
+}
+
+@mixin transition($declaration, $duration, $timing-function) {
+    -webkit-transition: $declaration $duration $timing-function;
+    -moz-transition: $declaration $duration $timing-function;
+    -o-transition: $declaration $duration $timing-function;
+    transition: $declaration $duration $timing-function;
+}
+
+@mixin transform($transformation) {
+    -webkit-transform: $transformation;
+    -moz-transform: $transformation;
+    -o-transform: $transformation;
+    transform: $transformation;
+}
+
 /////////////////////////////////////// Global
 body {
     background: #fafafa;
@@ -71,32 +132,100 @@ section {
 
 // Option 1
 #option-1 {
-    background-color: #7ECBB1;
+    position: relative;
+    background-color: $bluegreen;
+    padding-top: 80px;
     .inner-wrapper {
-        position: relative;
-        margin: 0 auto;
+        position: absolute;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        top: 30px;
+        left: 0;
+        right: 0;
         width: 500px;
-        img {
-
-        }
-        .sand {
+        .opt-1-sand {
             position: absolute;
-            top: 255px;
+            top: 215px;
             left: 243px;
             height: 5px;
             width: 5px;
             border-radius: 100%;
-            background-color: #E8DCAA;
+            background-color: $sand;
+            @include animation-name(sand-drop);
+            @include animation-delay(0.9s);
+            @include animation-duration(1.1s);
+            @include animation-timing-function(ease-in);
+            @include animation-iteration-count(infinite);
+        } 
+        @-webkit-keyframes sand-drop {
+            0%   { 
+                    top: 215px;  }
+            100% { 
+                    top: 275px;  }
         }
+    }
+    .logo-drop {
+        display: inline-block;
+        @include animation-name(logo-drop);
+        @include animation-duration(0.7s);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(1);
+    }
+    @-webkit-keyframes logo-drop {
+        0%   { 
+                top: -320px;  }
+        80%   { 
+                top: 40px;  }
+        90%   { 
+                top: 20px;  }
+        100% { 
+                top: 30px;  }
     }
 }
 
 // Option 2
 #option-2 {
-    background-color: #515E72;
+    background-color: $blue;
+    padding-top: 150px;
+    .inner-wrapper {
+        position: relative;
+        margin: 0 auto;
+        width: 400px;
+        .opt-2-complete {
+            // position: absolute;
+            // top: 200px;
+            // left: 189px;
+            width: 400px;
+        }
+    }
 }
 
 // Option 3
 #option-3 {
-    background-color: #E3AA3F;  
+    background-color: $yellow; 
+    padding-top: 80px;
+    .inner-wrapper {
+        position: relative;
+        margin: 0 auto;
+        width: 500px;
+        .opt-3-circle {
+            position: absolute;
+            top: 200px;
+            left: 189px;
+        }
+        #opt-3-circle {
+            position: absolute;
+            top: 200px;
+            left: 189px;
+            @include transform(rotate(-45deg));
+        }
+        .circle-spin {
+            @include transition(-webkit-transform, 2s, ease-in-out);
+            @include transform(rotate(360deg));
+        }
+        .opt-3-text {
+            position: absolute;
+        }
+    } 
 }
