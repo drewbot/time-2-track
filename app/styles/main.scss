@@ -335,19 +335,19 @@ section {
                     left: 65px;
                     bottom: 122px;
                     height: 0px;
-                    @include transform(rotate(0deg)) }
+                    @include transform(rotate(0deg)); }
             30%   { 
                     visibility: visible;
                     left: 65px;
                     bottom: 122px;
                     height: 27px;
-                    @include transform(rotate(0deg)) }
+                    @include transform(rotate(0deg)); }
             100% { 
                     visibility: visible;
                     left: 63px;
                     bottom: 123px;
                     height: 27px;
-                    @include transform(rotate(-45deg)) }
+                    @include transform(rotate(-45deg)); }
         }
         .opt-2-lower-arm {
             visibility: hidden;
@@ -373,25 +373,25 @@ section {
                     left: 65px;
                     bottom: 122px;
                     height: 0px;
-                    @include transform(rotate(0deg)) }
+                    @include transform(rotate(0deg)); }
             30%   { 
                     visibility: visible;
                     left: 65px;
                     bottom: 122px;
                     height: 22px;
-                    @include transform(rotate(0deg)) }
+                    @include transform(rotate(0deg)); }
             70% { 
                     visibility: visible;
                     left: 63px;
                     bottom: 121px;
                     height: 22px;
-                    @include transform(rotate(-90deg)) }
+                    @include transform(rotate(-90deg)); }
             100% { 
                     visibility: visible;
                     left: 64px;
                     bottom: 114px;
                     height: 22px;
-                    @include transform(rotate(-135deg)) }
+                    @include transform(rotate(-135deg)); }
         }
         .opt-2-text {
             visibility: hidden;
@@ -416,7 +416,7 @@ section {
                     left: 133px; }
             100% { 
                     visibility: visible;
-                    left: 143px }
+                    left: 143px; }
         }
     }
 }
