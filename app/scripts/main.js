@@ -54,16 +54,6 @@ $(".main").onepage_scroll({
       $('.opt-1-sand-2').removeClass('opt-1-sand-2-animate');
       $('.opt-1-sand-3').removeClass('opt-1-sand-3-animate');
       $('.opt-1-sand-4').removeClass('opt-1-sand-4-animate');
-      // hide option 2 elements before move
-      $('.opt-2-upper-arm').css({
-         'visibility' : 'hidden'
-      });
-      $('.opt-2-lower-arm').css({
-         'visibility' : 'hidden'
-      });
-      $('.opt-2-text').css({
-         'visibility' : 'hidden'
-      });
       // Remove the animate css to the svg in option 2
       $('.opt-2-path').css({
          '-webkit-animation' : '' ,
