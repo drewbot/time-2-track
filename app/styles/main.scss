@@ -336,6 +336,12 @@ section {
                     bottom: 122px;
                     height: 0px;
                     @include transform(rotate(0deg)); }
+            1%   { 
+                    opacity: 1;
+                    left: 65px;
+                    bottom: 122px;
+                    height: 0px;
+                    @include transform(rotate(0deg)); }
             30%   { 
                     opacity: 1;
                     left: 65px;
@@ -370,6 +376,12 @@ section {
         @-webkit-keyframes lower-arm-animate {
             0%   { 
                     opacity: 0;
+                    left: 65px;
+                    bottom: 122px;
+                    height: 0px;
+                    @include transform(rotate(0deg)); }
+            1%   { 
+                    opacity: 1;
                     left: 65px;
                     bottom: 122px;
                     height: 0px;
