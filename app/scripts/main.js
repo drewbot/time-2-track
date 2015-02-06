@@ -50,6 +50,9 @@ $(".main").onepage_scroll({
       pieChart.destroy();
       // remove the canvas element
       $('#opt-3-circle').remove();
+      // Remove option 3 arm animations
+      $('.opt-3-watcharm-large').removeClass('opt-3-watcharm-large-animate');
+      $('.opt-3-watcharm-small').removeClass('opt-3-watcharm-small-animate');
    },  // This option accepts a callback function. The function will be called before the page moves.
    afterMove: function(index) {
       // add the animate css to the svg in option 2
@@ -73,6 +76,9 @@ $(".main").onepage_scroll({
       var optThreeCircle = document.getElementById('opt-3-circle').getContext('2d');
       // Instatiate a new pie chart as described above to the new canvas element
       var pieChart = new Chart(optThreeCircle).Pie(pieData, pieOptions);
+      // Add option 3 arm animations
+      $('.opt-3-watcharm-large').addClass('opt-3-watcharm-large-animate');
+      $('.opt-3-watcharm-small').addClass('opt-3-watcharm-small-animate');
    },   // This option accepts a callback function. The function will be called after the page moves.
    loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
    keyboard: true,                  // You can activate the keyboard controls

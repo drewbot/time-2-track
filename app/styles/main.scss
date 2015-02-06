@@ -210,7 +210,7 @@ section {
         height: 200px;
         .opt-2-svg {
             position: absolute;
-            left: 0;
+            left: -30px;
             bottom: 0;
             .opt-2-path {
                 stroke-dasharray: 790;
@@ -225,11 +225,12 @@ section {
         .opt-2-upper-arm {
             visibility: hidden;
             position: absolute;
-            left: 95px;
+            left: 65px;
             bottom: 122px;
             width: 9px;
             height: 27px;
             background-color: $darkblue;
+            border-radius: 0 0 0 9px;
         }
         .opt-2-upper-arm-animate {
             @include animation-name(upper-arm-animate);
@@ -242,19 +243,19 @@ section {
         @-webkit-keyframes upper-arm-animate {
             0%   { 
                     visibility: hidden;
-                    left: 95px;
+                    left: 65px;
                     bottom: 122px;
                     height: 0px;
                     @include transform(rotate(0deg)) }
             30%   { 
                     visibility: visible;
-                    left: 95px;
+                    left: 65px;
                     bottom: 122px;
                     height: 27px;
                     @include transform(rotate(0deg)) }
             100% { 
                     visibility: visible;
-                    left: 93px;
+                    left: 63px;
                     bottom: 123px;
                     height: 27px;
                     @include transform(rotate(-45deg)) }
@@ -262,11 +263,12 @@ section {
         .opt-2-lower-arm {
             visibility: hidden;
             position: absolute;
-            left: 95px;
+            left: 65px;
             bottom: 122px;
             width: 9px;
             height: 22px;
             background-color: $darkblue;
+            border-radius: 0 0 9px 0;
         }
         .opt-2-lower-arm-animate {
             @include animation-name(lower-arm-animate);
@@ -279,25 +281,25 @@ section {
         @-webkit-keyframes lower-arm-animate {
             0%   { 
                     visibility: hidden;
-                    left: 95px;
+                    left: 65px;
                     bottom: 122px;
                     height: 0px;
                     @include transform(rotate(0deg)) }
             30%   { 
                     visibility: visible;
-                    left: 95px;
+                    left: 65px;
                     bottom: 122px;
                     height: 22px;
                     @include transform(rotate(0deg)) }
             70% { 
                     visibility: visible;
-                    left: 93px;
+                    left: 63px;
                     bottom: 121px;
                     height: 22px;
                     @include transform(rotate(-90deg)) }
             100% { 
                     visibility: visible;
-                    left: 94px;
+                    left: 64px;
                     bottom: 114px;
                     height: 22px;
                     @include transform(rotate(-135deg)) }
@@ -306,7 +308,7 @@ section {
             visibility: hidden;
             position: absolute;
             bottom: -2px;
-            left: 600px;
+            left: 60px;
         }
         .opt-2-text-animate {
             @include animation-name(opt-2-slide);
@@ -320,15 +322,12 @@ section {
             0%   { 
                     visibility: hidden;
                     left: 600px; }
-            70%   { 
-                    visibility: visible;
-                    left: 183px; }
             85% { 
                     visibility: visible;
-                    left: 163px; }
+                    left: 133px; }
             100% { 
                     visibility: visible;
-                    left: 173px }
+                    left: 143px }
         }
     }
 }
@@ -341,19 +340,69 @@ section {
         position: relative;
         margin: 0 auto;
         width: 500px;
-        .opt-3-circle {
+        .opt-3-mask {
+            position: absolute;
+            top: 195px;
+            left: 185px;
+            z-index: 150;
+        }
+        .opt-3-watcharm-large {
             position: absolute;
             top: 200px;
-            left: 189px;
+            left: 226px;
+            z-index: 100;
+        }
+        .opt-3-watcharm-large-animate {
+            @include animation-name(watcharm-large);
+            @include animation-delay(1.5s);
+            @include animation-duration(0.4s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(1);
+            @include animation-fill-mode(forwards);
+        }
+        @-webkit-keyframes watcharm-large {
+            0%   { 
+                    top: 200px; }
+            85% { 
+                    top: 173px; }
+            100% { 
+                    top: 176px; }
+        }
+        .opt-3-watcharm-small {
+            position: absolute;
+            top: 210px;
+            left: 256px;
+            z-index: 100;
+        }
+        .opt-3-watcharm-small-animate {
+            @include animation-name(watcharm-small);
+            @include animation-delay(1.2s);
+            @include animation-duration(0.4s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(1);
+            @include animation-fill-mode(forwards);
+        }
+        @-webkit-keyframes watcharm-small {
+            0%   { 
+                    top: 210px;
+                    left: 256px; }
+            // 85% { 
+            //         top: 199px;
+            //         left: 264px; }
+            100% { 
+                    top: 199px;
+                    left: 264px; }
         }
         #opt-3-circle {
             position: absolute;
             top: 200px;
             left: 189px;
             @include transform(rotate(-45deg));
+            z-index: 200;
         }
         .opt-3-text {
             position: absolute;
+            z-index: 300;
         }
     } 
 }
