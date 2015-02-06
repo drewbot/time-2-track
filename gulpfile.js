@@ -2,6 +2,7 @@
 // generated on 2015-02-04 using generator-gulp-webapp 0.1.0
 
 var gulp = require('gulp');
+var mainBowerFiles = require('main-bower-files');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
