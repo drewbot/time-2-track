@@ -9,12 +9,13 @@
 
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/onepage-scroll/onepage-scroll.css">
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="bower_components/onepage-scroll/onepage-scroll.css">
+        <!-- <link rel="stylesheet" href="bower_components/onepage-scroll/onepage-scroll.css"> -->
         <!-- endbuild -->
 
         <!-- build:js scripts/vendor/modernizr.js -->
@@ -27,12 +28,21 @@
         <![endif]-->
 
         <div class="main">
+
           <section id="option-1">
             <div class="inner-wrapper">
-              <div class="opt-1-sand"></div>
+              <div class="opt-1-sand-1"></div>
+              <div class="opt-1-sand-2"></div>
+              <div class="opt-1-sand-3"></div>
+              <div class="opt-1-sand-4"></div>
               <img src="images/option-1-complete.png" class="opt-1-complete">
             </div>
+            <button class="move-down">
+              <span>next option</span>
+              <img src="images/down-arrow.svg" class="down-arrow">
+            </button>
           </section>
+
           <section id="option-2">
             <div class="inner-wrapper">
               <svg class="opt-2-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -47,7 +57,12 @@
               <div class="opt-2-lower-arm"></div>
               <img src="images/option-2-text.png" class="opt-2-text">
             </div>
+            <button class="move-down">
+              <span>next option</span>
+              <img src="images/down-arrow.svg" class="down-arrow">
+            </button>
           </section>
+
           <section id="option-3">
             <div class="inner-wrapper">
               <img src="images/option-3-watcharm-large.png" class="opt-3-watcharm-large">
@@ -56,7 +71,12 @@
               <canvas id="opt-3-circle" width="100" height="100"></canvas>
               <img src="images/option-3-text.png" class="opt-3-text">
             </div>
+            <button class="move-down">
+              <span>back to top</span>
+              <img src="images/down-arrow.svg" class="down-arrow">
+            </button>
           </section>
+
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

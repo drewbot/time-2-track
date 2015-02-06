@@ -130,11 +130,20 @@ $white: #fff;
     transform: $transformation;
 }
 
+@mixin sand() {
+    position: absolute;
+    top: 215px;
+    left: 242px;
+    height: 6px;
+    width: 6px;
+    border-radius: 100%;
+    background-color: $sand;
+}
+
 /////////////////////////////////////// Global
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
 }
 
 section {
@@ -145,6 +154,34 @@ section {
     // overflow: hidden;   
 }
 
+.move-down {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 72%;
+    left: 0;
+    right: 0;
+    width: 150px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 200;
+    color: $white;
+    @include transition(all 0.3s ease-in-out);
+    cursor: pointer;
+}
+
+.down-arrow {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 60px;
+    left: 0;
+    right: 0;
+}
+
 // Option 1
 #option-1 {
     position: relative;
@@ -152,40 +189,88 @@ section {
     padding-top: 80px;
     .inner-wrapper {
         position: absolute;
-        display: none;
         margin-left: auto;
         margin-right: auto;
-        top: 30px;
+        top: -320px;
         left: 0;
         right: 0;
         width: 500px;
-        .opt-1-sand {
-            position: absolute;
-            top: 215px;
-            left: 243px;
-            height: 5px;
-            width: 5px;
-            border-radius: 100%;
-            background-color: $sand;
-            @include animation-name(sand-drop);
-            @include animation-delay(0.9s);
-            @include animation-duration(1.1s);
-            @include animation-timing-function(ease-in);
-            @include animation-iteration-count(infinite);
-        } 
-        @-webkit-keyframes sand-drop {
+        .opt-1-sand-1 {
+            @include sand();
+        }
+        .opt-1-sand-1-animate {
+            @include animation-name(sand-drop-1);
+            @include animation-delay(1s);
+            @include animation-duration(0.5s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(1);
+            @include animation-fill-mode(forwards);
+        }
+        @-webkit-keyframes sand-drop-1 {
             0%   { 
                     top: 215px;  }
             100% { 
                     top: 275px;  }
         }
+        .opt-1-sand-2 {
+            @include sand();
+        }
+        .opt-1-sand-2-animate {
+            @include animation-name(sand-drop-2);
+            @include animation-delay(1.9s);
+            @include animation-duration(0.5s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(1);
+            @include animation-fill-mode(forwards);
+        }
+        @-webkit-keyframes sand-drop-2 {
+            0%   { 
+                    top: 215px;  }
+            100% { 
+                    top: 275px;  }
+        }
+        .opt-1-sand-3 {
+            @include sand();
+        }
+        .opt-1-sand-3-animate {
+            @include animation-name(sand-drop-3);
+            @include animation-delay(2.8s);
+            @include animation-duration(0.5s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(1);
+            @include animation-fill-mode(forwards);
+        }
+        @-webkit-keyframes sand-drop-3 {
+            0%   { 
+                    top: 215px;  }
+            100% { 
+                    top: 263px;  }
+        }
+        .opt-1-sand-4 {
+            @include sand();
+        }
+        .opt-1-sand-4-animate {
+            @include animation-name(sand-drop-4);
+            @include animation-delay(3.7s);
+            @include animation-duration(0.5s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(1);
+            @include animation-fill-mode(forwards);
+        }
+        @-webkit-keyframes sand-drop-4 {
+            0%   { 
+                    top: 215px;  }
+            100% { 
+                    top: 250px;  }
+        }
     }
     .logo-drop {
-        display: inline-block;
         @include animation-name(logo-drop);
+        @include animation-delay(0.2s);
         @include animation-duration(0.7s);
         @include animation-timing-function(linear);
         @include animation-iteration-count(1);
+        @include animation-fill-mode(forwards);
     }
     @-webkit-keyframes logo-drop {
         0%   { 
@@ -201,11 +286,16 @@ section {
 
 // Option 2
 #option-2 {
+    position: relative;
     background-color: $blue;
-    padding-top: 150px;
+    padding-top: 80px;
     .inner-wrapper {
-        position: relative;
-        margin: 0 auto;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        top: 150px;
+        left: 0;
+        right: 0;
         width: 525px;
         height: 200px;
         .opt-2-svg {
@@ -230,7 +320,6 @@ section {
             width: 9px;
             height: 27px;
             background-color: $darkblue;
-            border-radius: 0 0 0 9px;
         }
         .opt-2-upper-arm-animate {
             @include animation-name(upper-arm-animate);
@@ -334,12 +423,18 @@ section {
 
 // Option 3
 #option-3 {
+    position: relative;
     background-color: $yellow; 
     padding-top: 80px;
     .inner-wrapper {
-        position: relative;
-        margin: 0 auto;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        top: 40px;
+        left: 0;
+        right: 0;
         width: 500px;
+        height: 500px;
         .opt-3-mask {
             position: absolute;
             top: 195px;
@@ -386,9 +481,6 @@ section {
             0%   { 
                     top: 210px;
                     left: 256px; }
-            // 85% { 
-            //         top: 199px;
-            //         left: 264px; }
             100% { 
                     top: 199px;
                     left: 264px; }
@@ -402,6 +494,9 @@ section {
         }
         .opt-3-text {
             position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 500px;
             z-index: 300;
         }
     } 

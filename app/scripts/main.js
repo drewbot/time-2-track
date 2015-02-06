@@ -1,6 +1,19 @@
-// On document load drop option 1 logo from above
 $('document').ready(function(){
+   // On document load drop option 1 logo from above
    $('#option-1 .inner-wrapper').addClass('logo-drop')
+   // Add sand animations
+      $('.opt-1-sand-1').addClass('opt-1-sand-1-animate');
+      $('.opt-1-sand-2').addClass('opt-1-sand-2-animate');
+      $('.opt-1-sand-3').addClass('opt-1-sand-3-animate');
+      $('.opt-1-sand-4').addClass('opt-1-sand-4-animate');
+})
+
+$('.move-down').click(function(){
+   $(".main").moveDown();
+   // destroy the old chart gefore move
+   pieChart.destroy();
+   // remove the canvas element
+   $('#opt-3-circle').remove();
 })
 
 // pie chart data
@@ -34,6 +47,13 @@ $(".main").onepage_scroll({
    pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
    updateURL: true,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
    beforeMove: function(index) {
+      // Clear option 1 logo before move
+      $('#option-1 .inner-wrapper').removeClass('logo-drop');
+      // Remove sand animations
+      $('.opt-1-sand-1').removeClass('opt-1-sand-1-animate');
+      $('.opt-1-sand-2').removeClass('opt-1-sand-2-animate');
+      $('.opt-1-sand-3').removeClass('opt-1-sand-3-animate');
+      $('.opt-1-sand-4').removeClass('opt-1-sand-4-animate');
       // Remove the animate css to the svg in option 2
       $('.opt-2-path').css({
          '-webkit-animation' : '' ,
@@ -55,6 +75,13 @@ $(".main").onepage_scroll({
       $('.opt-3-watcharm-small').removeClass('opt-3-watcharm-small-animate');
    },  // This option accepts a callback function. The function will be called before the page moves.
    afterMove: function(index) {
+      // Drop option 1 logo on move
+      $('#option-1 .inner-wrapper').addClass('logo-drop');
+      // Add sand animations
+      $('.opt-1-sand-1').addClass('opt-1-sand-1-animate');
+      $('.opt-1-sand-2').addClass('opt-1-sand-2-animate');
+      $('.opt-1-sand-3').addClass('opt-1-sand-3-animate');
+      $('.opt-1-sand-4').addClass('opt-1-sand-4-animate');
       // add the animate css to the svg in option 2
       $('.opt-2-path').css({
          '-webkit-animation' : 'dash 3s linear forwards' ,
