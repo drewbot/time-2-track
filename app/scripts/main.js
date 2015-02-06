@@ -34,13 +34,44 @@ $(".main").onepage_scroll({
    pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
    updateURL: true,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
    beforeMove: function(index) {
+      // Remove the animate css to the svg in option 2
+      $('.opt-2-path').css({
+         '-webkit-animation' : '' ,
+         '-moz-animation' : '' ,
+         '-o-animation' : '' ,
+         'animation' : ''
+      });
+      // Remove option two icon arms
+      $('.opt-2-upper-arm').removeClass('opt-2-upper-arm-animate');
+      $('.opt-2-lower-arm').removeClass('opt-2-lower-arm-animate');
+      // remove option 2 text
+      $('.opt-2-text').removeClass('opt-2-text-animate');
+      // destroy the old chart gefore move
       pieChart.destroy();
+      // remove the canvas element
       $('#opt-3-circle').remove();
    },  // This option accepts a callback function. The function will be called before the page moves.
    afterMove: function(index) {
+      // add the animate css to the svg in option 2
+      $('.opt-2-path').css({
+         '-webkit-animation' : 'dash 3s linear forwards' ,
+         '-moz-animation' : 'dash 3s linear forwards' ,
+         '-o-animation' : 'dash 3s linear forwards' ,
+         'animation' : 'dash 3s linear forwards'
+      });
+      // Animate option two icon arms
+      $('.opt-2-upper-arm').addClass('opt-2-upper-arm-animate');
+      $('.opt-2-lower-arm').addClass('opt-2-lower-arm-animate');
+      // Animate option 2 text
+      $('.opt-2-text').addClass('opt-2-text-animate');
+      // $('.opt-2-path').remove();
+      // Create new canvas element and provide class name, height and width
       var optThreeCanvas = '<canvas id="opt-3-circle" width="100" height="100"></canvas>'
+      // add the newly created canvas element to the right container
       $('#option-3 .inner-wrapper').prepend(optThreeCanvas);
+      // get the 2d context of the canvas element and store as a variable
       var optThreeCircle = document.getElementById('opt-3-circle').getContext('2d');
+      // Instatiate a new pie chart as described above to the new canvas element
       var pieChart = new Chart(optThreeCircle).Pie(pieData, pieOptions);
    },   // This option accepts a callback function. The function will be called after the page moves.
    loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
