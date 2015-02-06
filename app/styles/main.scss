@@ -313,13 +313,14 @@ section {
             }
         }
         .opt-2-upper-arm {
-            visibility: hidden;
+            visibility: visible;
             position: absolute;
-            left: 65px;
-            bottom: 122px;
+            left: 63px;
+            bottom: 123px;
             width: 9px;
             height: 27px;
             background-color: $darkblue;
+            @include transform(rotate(-45deg));
         }
         .opt-2-upper-arm-animate {
             @include animation-name(upper-arm-animate);
@@ -350,14 +351,15 @@ section {
                     @include transform(rotate(-45deg)); }
         }
         .opt-2-lower-arm {
-            visibility: hidden;
+            visibility: visible;
             position: absolute;
-            left: 65px;
-            bottom: 122px;
+            left: 64px;
+            bottom: 114px;
             width: 9px;
             height: 22px;
             background-color: $darkblue;
             border-radius: 0 0 9px 0;
+            @include transform(rotate(-135deg));
         }
         .opt-2-lower-arm-animate {
             @include animation-name(lower-arm-animate);
@@ -394,10 +396,10 @@ section {
                     @include transform(rotate(-135deg)); }
         }
         .opt-2-text {
-            visibility: hidden;
+            visibility: visible;
             position: absolute;
             bottom: -2px;
-            left: 60px;
+            left: 143px;
         }
         .opt-2-text-animate {
             @include animation-name(opt-2-slide);
